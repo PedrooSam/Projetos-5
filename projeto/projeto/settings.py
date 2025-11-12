@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'drf_spectacular',
     'app'
 ]
 
@@ -61,7 +62,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 
     #Configuração do drf spectacular
-    #'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
 }
 
 
