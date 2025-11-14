@@ -1,6 +1,6 @@
 export function FestivalFooter() {
   return (
-    <footer className="bg-muted mt-24">
+    <footer className="bg-card/50 mt-24">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
