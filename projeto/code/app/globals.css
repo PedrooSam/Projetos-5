@@ -4,7 +4,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated to use exact color palette provided: neutral grayscale with dark blue-grays */
   --background: #161F2F;
   --foreground: #FFFFFF;
   --card: #1D2022;

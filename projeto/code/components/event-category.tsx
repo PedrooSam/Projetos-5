@@ -1,9 +1,10 @@
-'use client'
+"use client"
 
-import { EventCard } from '@/components/event-card'
-import { Button } from '@/components/ui/button'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useRef } from 'react'
+import { EventCard } from "@/components/event-card"
+import { Button } from "@/components/ui/button"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useRef } from "react"
+import Link from "next/link"
 
 interface Event {
   id: number
@@ -16,16 +17,17 @@ interface Event {
 interface EventCategoryProps {
   title: string
   events: Event[]
+  viewAllHref?: string
 }
 
-export function EventCategory({ title, events }: EventCategoryProps) {
+export function EventCategory({ title, events, viewAllHref }: EventCategoryProps) {
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  const scroll = (direction: 'left' | 'right') => {
+  const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       const scrollAmount = 400
-      const newScrollLeft = scrollRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount)
-      scrollRef.current.scrollTo({ left: newScrollLeft, behavior: 'smooth' })
+      const newScrollLeft = scrollRef.current.scrollLeft + (direction === "left" ? -scrollAmount : scrollAmount)
+      scrollRef.current.scrollTo({ left: newScrollLeft, behavior: "smooth" })
     }
   }
 
@@ -33,36 +35,45 @@ export function EventCategory({ title, events }: EventCategoryProps) {
     <section>
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
-        <Button variant="ghost" size="sm" className="text-primary hover:text-primary">
+        {viewAllHref ? (
+          <Link 
+            href={viewAllHref} 
+            className="text-white font-medium hover:underline cursor-pointer"
+          >
           Ver Tudo
-        </Button>
+          </Link> 
+        ) : (
+          <span className="text-white font-medium">
+            Ver Tudo
+          </span>
+        )}
       </div>
-      
+
       <div className="relative group">
         <Button
           variant="outline"
           size="icon"
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
-          onClick={() => scroll('left')}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg bg-transparent"
+          onClick={() => scroll("left")}
         >
           <ChevronLeft className="h-4 w-4" />
         </Button>
-        
-        <div 
+
+        <div
           ref={scrollRef}
           className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {events.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
         </div>
-        
+
         <Button
           variant="outline"
           size="icon"
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
-          onClick={() => scroll('right')}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg bg-transparent"
+          onClick={() => scroll("right")}
         >
           <ChevronRight className="h-4 w-4" />
         </Button>

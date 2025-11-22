@@ -669,93 +669,93 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$component
 const comedyEvents = [
     {
         id: 1,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/theatrical-performance-poster.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/theatrical-performance-poster.jpg"
     },
     {
         id: 2,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/comedy-theater-poster.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/comedy-theater-poster.jpg"
     },
     {
         id: 3,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/brazilian-circus-performance.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/brazilian-circus-performance.jpg"
     }
 ];
 const dramaEvents = [
     {
         id: 4,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/drama-theater-performance.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/drama-theater-performance.jpg"
     },
     {
         id: 5,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/dramatic-stage-play.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/dramatic-stage-play.jpg"
     },
     {
         id: 6,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/theatrical-drama.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/theatrical-drama.jpg"
     }
 ];
 const musicalEvents = [
     {
         id: 7,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/musical-theater-performance.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/musical-theater-performance.jpg"
     },
     {
         id: 8,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/broadway-musical-show.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/broadway-musical-show.jpg"
     },
     {
         id: 9,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/musical-stage-performance.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/musical-stage-performance.jpg"
     }
 ];
 const completeEvents = [
     {
         id: 10,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/dance-performance-brasil.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/dance-performance-brasil.jpg"
     },
     {
         id: 11,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/contemporary-dance-show.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/contemporary-dance-show.jpg"
     },
     {
         id: 12,
-        title: 'Grupo Corpo - Piracema',
-        date: '21 OUT > 22 OUT',
-        venue: 'Teatro Paulo Pontes, João Pessoa - PB',
-        image: '/brazilian-festival-performance.jpg'
+        title: "Grupo Corpo - Piracema",
+        date: "21 OUT > 22 OUT",
+        venue: "Teatro Paulo Pontes, Recife - PE",
+        image: "/brazilian-festival-performance.jpg"
     }
 ];
 function FestivalPage() {
@@ -788,7 +788,7 @@ function FestivalPage() {
                         events: dramaEvents
                     }, void 0, false, {
                         fileName: "[project]/projeto/code/app/page.tsx",
-                        lineNumber: 114,
+                        lineNumber: 111,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$components$2f$event$2d$category$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["EventCategory"], {
@@ -796,15 +796,16 @@ function FestivalPage() {
                         events: musicalEvents
                     }, void 0, false, {
                         fileName: "[project]/projeto/code/app/page.tsx",
-                        lineNumber: 119,
+                        lineNumber: 113,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$components$2f$event$2d$category$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["EventCategory"], {
                         title: "Programação completa",
-                        events: completeEvents
+                        events: completeEvents,
+                        viewAllHref: "/programacao"
                     }, void 0, false, {
                         fileName: "[project]/projeto/code/app/page.tsx",
-                        lineNumber: 124,
+                        lineNumber: 115,
                         columnNumber: 9
                     }, this)
                 ]
@@ -815,7 +816,7 @@ function FestivalPage() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$components$2f$festival$2d$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FestivalFooter"], {}, void 0, false, {
                 fileName: "[project]/projeto/code/app/page.tsx",
-                lineNumber: 130,
+                lineNumber: 118,
                 columnNumber: 7
             }, this)
         ]
