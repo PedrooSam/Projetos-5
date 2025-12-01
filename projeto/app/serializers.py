@@ -42,8 +42,8 @@ class EspetaculoSerializer(serializers.ModelSerializer):
 
 
 class SessaoSerializer(serializers.ModelSerializer):
-    teatro = serializers.StringRelatedField()
-    espetaculo = serializers.StringRelatedField()
+    teatro = serializers.PrimaryKeyRelatedField(queryset=Teatro.objects.all())
+    espetaculo = serializers.PrimaryKeyRelatedField(queryset=Espetaculo.objects.all())
 
     class Meta:
         model = Sessao

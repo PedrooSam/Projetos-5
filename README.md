@@ -13,10 +13,21 @@ Depois, é necessário instalar as dependências do projeto.
 ```
 pip install -r requirements.txt
 ```
-Por fim, entre na pasta raiz do projeto e inicie a API
+Entre na pasta raiz do projeto.
 ```
 cd projeto
 ```
+Faça as migrações para gerar o banco de dados.
+```
+py manage.py makemigrations
+```
+```
+py manage.py migrate
+```
+Finalmente, inicie a API.
 ```
 py manage.py runserver
 ```
+## Importante:
+O projeto possui uma documentação swagger, mapeada pela extensão do django chamada drf-spectacular.</br>
+Para acessá-la, basta acessar a url "/docs" ao rodar o projeto.

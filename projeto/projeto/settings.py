@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     #Implementa autenticação jwt 
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        "app.authentication.CookieJWTAuthentication",
     ),
 
     #Define a autenticação por token como padrão
@@ -66,6 +66,16 @@ REST_FRAMEWORK = {
     #Configuração do drf spectacular
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
 }
+
+SIMPLE_JWT = {
+    "AUTH_COOKIE": "access_token",              # nome do cookie de acesso
+    "AUTH_COOKIE_SECURE": False,                # True em produção (https)
+    "AUTH_COOKIE_HTTP_ONLY": True,              # evita acesso via JS
+    "AUTH_COOKIE_SAMESITE": "Lax",              # Lax/Strict/None
+    "AUTH_COOKIE_PATH": "/",
+    "AUTH_COOKIE_DOMAIN": None,
+}
+
 
 
 MIDDLEWARE = [

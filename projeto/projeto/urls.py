@@ -17,11 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+from app.views import CookieTokenObtainPairView, LogoutView
+
+print(">>> Views importadas:", CookieTokenObtainPairView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     #URLs djoser
+    path("auth/jwt/create/", CookieTokenObtainPairView.as_view(), name="jwt-create"), #Sobrescreve a url do djoser para usar minha view
+    path("auth/jwt/logout/", LogoutView.as_view(), name="jwt-logout"),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
 
