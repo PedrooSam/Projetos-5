@@ -10,25 +10,45 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Evento, eventoService } from "@/lib/services/eventos-service"
 import { Sessao, sessaoService } from "@/lib/services/sessoes-service"
+import { useParams, useSearchParams } from "next/navigation"
 
 
 
 export default function ProgramacaoPage() {
   const [allSessoes, setAllSessoes] = useState<Sessao[]>([])
+  const [filteredSessoes, setFilteredSessoes] = useState<Sessao[]>([])
+
+  const searchParams = useSearchParams()
+  const busca = searchParams.get('busca')
+
 
   useEffect(() => {
     const fetchSessoes = async () => {
       const response = await sessaoService.getAllSessoes("1")
       setAllSessoes(response.data.results)
+      setFilteredSessoes(response.data.results)
     }
 
     fetchSessoes()
   }, [])
 
-  return (
+  useEffect(() => {
+    
+  }, [busca])
+
+  function filterSearch(nome: string | null) {
+    console.log(nome)
+    if(nome === null) return
+    if(nome.length < 3) { 
+      setFilteredSessoes(allSessoes)
+    }
+    setFilteredSessoes(allSessoes.filter(s => s.espetaculo.nome.toLowerCase().startsWith(nome.toLowerCase()) || s.espetaculo.grupo.toLowerCase().startsWith(nome.toLowerCase())))
+    console.log(filteredSessoes)
+  }
+
+  return ( 
     <div className="min-h-screen flex flex-col bg-background">
       <FestivalHeader />
-
       <main className="flex-1 container mx-auto px-4 py-8">
         {/* Back Button */}
         <div className="mb-8">
@@ -52,13 +72,13 @@ export default function ProgramacaoPage() {
 
           <div className="relative w-full md:w-[300px]">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input placeholder="Pesquisar eventos" className="pl-9 bg-muted/50 border-muted-foreground/20" />
+            <Input onChange={e => filterSearch(e.target.value) } placeholder="Pesquisar eventos" className="pl-9 bg-muted/50 border-muted-foreground/20" />
           </div>
         </div>
 
         {/* Events Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {allSessoes.map((sessao) => (
+          {filteredSessoes.map((sessao) => (
             <div key={sessao.id} className="flex justify-center">
               <SessaoCard sessao={sessao} className="w-full max-w-[280px]" />
             </div>
