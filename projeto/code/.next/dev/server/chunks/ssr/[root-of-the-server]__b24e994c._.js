@@ -134,6 +134,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modu
 var __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/projeto/code/node_modules/next/image.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/projeto/code/node_modules/next/dist/client/app-dir/link.react-server.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$components$2f$event$2d$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/projeto/code/components/event-card.tsx [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$api$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/projeto/code/node_modules/next/dist/api/navigation.react-server.js [app-rsc] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/projeto/code/node_modules/next/dist/client/components/navigation.react-server.js [app-rsc] (ecmascript)");
+;
 ;
 ;
 ;
@@ -173,16 +176,16 @@ const eventsData = [
     }
 ];
 function EventoPage({ params }) {
-    const eventId = Number.parseInt(params.id);
-    const event = eventsData.find((e)=>e.id === eventId) || eventsData[0];
+    const { id } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$client$2f$components$2f$navigation$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["useParams"])();
+    const event = eventsData.find((e)=>e.id === id) || eventsData[0];
     // Get related events (excluding current event)
-    const relatedEvents = eventsData.filter((e)=>e.id !== eventId).slice(0, 3);
+    const relatedEvents = eventsData.filter((e)=>e.id !== id).slice(0, 3);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "min-h-screen bg-background",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$components$2f$festival$2d$header$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FestivalHeader"], {}, void 0, false, {
                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                lineNumber: 50,
+                lineNumber: 51,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -198,19 +201,19 @@ function EventoPage({ params }) {
                                     className: "h-4 w-4"
                                 }, void 0, false, {
                                     fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                    lineNumber: 56,
+                                    lineNumber: 57,
                                     columnNumber: 13
                                 }, this),
                                 "Voltar"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                            lineNumber: 55,
+                            lineNumber: 56,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                        lineNumber: 54,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -226,12 +229,12 @@ function EventoPage({ params }) {
                                     priority: true
                                 }, void 0, false, {
                                     fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 65,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                lineNumber: 63,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -247,7 +250,7 @@ function EventoPage({ params }) {
                                                         children: event.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                        lineNumber: 72,
+                                                        lineNumber: 73,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -260,7 +263,7 @@ function EventoPage({ params }) {
                                                                         className: "h-5 w-5 text-primary mt-0.5 flex-shrink-0"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                        lineNumber: 76,
+                                                                        lineNumber: 77,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -269,18 +272,18 @@ function EventoPage({ params }) {
                                                                             children: event.fullDate
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                            lineNumber: 78,
+                                                                            lineNumber: 79,
                                                                             columnNumber: 25
                                                                         }, this)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                        lineNumber: 77,
+                                                                        lineNumber: 78,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                lineNumber: 75,
+                                                                lineNumber: 76,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -290,20 +293,20 @@ function EventoPage({ params }) {
                                                                         className: "h-5 w-5 text-primary mt-0.5 flex-shrink-0"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                        lineNumber: 83,
+                                                                        lineNumber: 84,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         children: event.time
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                        lineNumber: 84,
+                                                                        lineNumber: 85,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                lineNumber: 82,
+                                                                lineNumber: 83,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -313,32 +316,32 @@ function EventoPage({ params }) {
                                                                         className: "h-5 w-5 text-primary mt-0.5 flex-shrink-0"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                        lineNumber: 88,
+                                                                        lineNumber: 89,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         children: event.venue
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                        lineNumber: 89,
+                                                                        lineNumber: 90,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                lineNumber: 87,
+                                                                lineNumber: 88,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                        lineNumber: 74,
+                                                        lineNumber: 75,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                lineNumber: 71,
+                                                lineNumber: 72,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -356,7 +359,7 @@ function EventoPage({ params }) {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                lineNumber: 96,
+                                                                lineNumber: 97,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -364,7 +367,7 @@ function EventoPage({ params }) {
                                                                 children: "sem juros"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                lineNumber: 99,
+                                                                lineNumber: 100,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -376,13 +379,13 @@ function EventoPage({ params }) {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                                lineNumber: 100,
+                                                                lineNumber: 101,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                        lineNumber: 95,
+                                                        lineNumber: 96,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
@@ -391,35 +394,35 @@ function EventoPage({ params }) {
                                                         children: "Comprar"
                                                     }, void 0, false, {
                                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                        lineNumber: 103,
+                                                        lineNumber: 104,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                                lineNumber: 94,
+                                                lineNumber: 95,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                        lineNumber: 70,
+                                        lineNumber: 71,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                    lineNumber: 69,
+                                    lineNumber: 70,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                lineNumber: 68,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -430,7 +433,7 @@ function EventoPage({ params }) {
                                 children: "Descrição do Evento"
                             }, void 0, false, {
                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                lineNumber: 114,
+                                lineNumber: 115,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -438,13 +441,13 @@ function EventoPage({ params }) {
                                 children: event.description
                             }, void 0, false, {
                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                lineNumber: 115,
+                                lineNumber: 116,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                        lineNumber: 113,
+                        lineNumber: 114,
                         columnNumber: 9
                     }, this),
                     relatedEvents.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -454,7 +457,7 @@ function EventoPage({ params }) {
                                 children: "Veja também"
                             }, void 0, false, {
                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                lineNumber: 121,
+                                lineNumber: 122,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -464,35 +467,35 @@ function EventoPage({ params }) {
                                         className: "w-full"
                                     }, relatedEvent.id, false, {
                                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 125,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                                lineNumber: 122,
+                                lineNumber: 123,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                        lineNumber: 120,
+                        lineNumber: 121,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                lineNumber: 52,
+                lineNumber: 53,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$projeto$2f$code$2f$components$2f$festival$2d$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["FestivalFooter"], {}, void 0, false, {
                 fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-                lineNumber: 131,
+                lineNumber: 132,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/projeto/code/app/evento/[id]/page.tsx",
-        lineNumber: 49,
+        lineNumber: 50,
         columnNumber: 5
     }, this);
 }

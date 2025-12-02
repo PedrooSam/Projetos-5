@@ -1,118 +1,47 @@
+"use client"
+
 import { FestivalHeader } from "@/components/festival-header"
 import { FestivalHero } from "@/components/festival-hero"
-import { EventCategory } from "@/components/event-category"
+import { SessaoCategory } from "@/components/sessao-category"
 import { FestivalFooter } from "@/components/festival-footer"
-
-const comedyEvents = [
-  {
-    id: 1,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/theatrical-performance-poster.jpg",
-  },
-  {
-    id: 2,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/comedy-theater-poster.jpg",
-  },
-  {
-    id: 3,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/brazilian-circus-performance.jpg",
-  },
-]
-
-const dramaEvents = [
-  {
-    id: 4,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/drama-theater-performance.jpg",
-  },
-  {
-    id: 5,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/dramatic-stage-play.jpg",
-  },
-  {
-    id: 6,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/theatrical-drama.jpg",
-  },
-]
-
-const musicalEvents = [
-  {
-    id: 7,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/musical-theater-performance.jpg",
-  },
-  {
-    id: 8,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/broadway-musical-show.jpg",
-  },
-  {
-    id: 9,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/musical-stage-performance.jpg",
-  },
-]
-
-const completeEvents = [
-  {
-    id: 10,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/dance-performance-brasil.jpg",
-  },
-  {
-    id: 11,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/contemporary-dance-show.jpg",
-  },
-  {
-    id: 12,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/brazilian-festival-performance.jpg",
-  },
-]
+import { Card } from "@/components/ui/card"
+import { authService } from "@/lib/services/auth-service"
+import { useEffect, useState } from "react"
+import { Sessao, sessaoService } from "@/lib/services/sessoes-service"
 
 export default function FestivalPage() {
+
+  const [sessoes, setSessoes] = useState<Sessao[]>()
+
+  useEffect(() => {
+    const fetchSessoes = async () => {
+      sessaoService.getAllSessoes("1").then(response => 
+        setSessoes(response.data.results)
+      )
+    }
+
+    fetchSessoes()
+   
+  }, [])
+
+  const musicalSessoes = sessoes?.filter(s => s.espetaculo.categoria === "Musical")
+  const dramaSessoes = sessoes?.filter(s => s.espetaculo.categoria === "Drama")
+  const comediaSessoes = sessoes?.filter(s => s.espetaculo.categoria === "Comedia")
+  const dancaSessoes = sessoes?.filter(s => s.espetaculo.categoria === "Dança")
+
   return (
     <div className="min-h-screen">
       <FestivalHeader />
       <FestivalHero />
 
       <main className="container mx-auto px-4 py-12 space-y-16">
-        <EventCategory title="Comédia" events={comedyEvents} />
+        {comediaSessoes && comediaSessoes.length !== 0 && <SessaoCategory titulo="Comédia" sessoes={comediaSessoes} />}
 
-        <EventCategory title="Drama" events={dramaEvents} />
+        {dramaSessoes && dramaSessoes.length !== 0 &&<SessaoCategory titulo="Drama" sessoes={dramaSessoes} />}
 
-        <EventCategory title="Musical" events={musicalEvents} />
+        {musicalSessoes && musicalSessoes.length !== 0 &&  <SessaoCategory titulo="Musical" sessoes={musicalSessoes} />}
 
-        <EventCategory title="Programação completa" events={completeEvents} viewAllHref="/programacao" />
+        {dancaSessoes && dancaSessoes.length !== 0 && <SessaoCategory titulo="Dança" sessoes={dancaSessoes} />}
       </main>
 
       <FestivalFooter />

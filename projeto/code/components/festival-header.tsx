@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Search, SlidersHorizontal } from 'lucide-react'
+import { AuthButton } from './auth-button'
+import Link from 'next/link'
 
 export function FestivalHeader() {
   return (
@@ -22,17 +24,17 @@ export function FestivalHeader() {
             </div>
           </div>
           
-          <nav className="hidden md:flex items-center gap-6">
-            <a href="#" className="text-sm font-medium hover:text-primary transition-colors">
-              Programação
-            </a>
+          <div className="hidden md:flex items-center gap-6">
+            <Link className="text-sm font-medium hover:text-primary transition-colors" href="/programacao">Programação</Link>
             <a href="#" className="text-sm font-medium hover:text-primary transition-colors">
               Ingressos
             </a>
-            <a href="#" className="text-sm font-medium hover:text-primary transition-colors">
+            <a href="#footer" className="text-sm font-medium hover:text-primary transition-colors">
               Sobre
             </a>
-          </nav>
+          </div>
+
+          <AuthButton />
         </div>
       </div>
     </header>

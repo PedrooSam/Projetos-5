@@ -1,23 +1,30 @@
+"use client"
+
 import { FestivalHeader } from "@/components/festival-header"
 import { FestivalFooter } from "@/components/festival-footer"
-import { EventCard } from "@/components/event-card"
+import { SessaoCard } from "@/components/sessao-card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ChevronLeft, Search, SlidersHorizontal } from "lucide-react"
 import Link from "next/link"
+import { useEffect, useState } from "react"
+import { Evento, eventoService } from "@/lib/services/eventos-service"
+import { Sessao, sessaoService } from "@/lib/services/sessoes-service"
 
-// Mock data for the full schedule
-const allEvents = Array(12)
-  .fill(null)
-  .map((_, i) => ({
-    id: i + 1,
-    title: "Grupo Corpo - Piracema",
-    date: "21 OUT > 22 OUT",
-    venue: "Teatro Paulo Pontes, Recife - PE",
-    image: "/dance-performance-brasil.jpg", // Using one of the existing images
-  }))
+
 
 export default function ProgramacaoPage() {
+  const [allSessoes, setAllSessoes] = useState<Sessao[]>([])
+
+  useEffect(() => {
+    const fetchSessoes = async () => {
+      const response = await sessaoService.getAllSessoes("1")
+      setAllSessoes(response.data.results)
+    }
+
+    fetchSessoes()
+  }, [])
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <FestivalHeader />
@@ -51,9 +58,9 @@ export default function ProgramacaoPage() {
 
         {/* Events Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {allEvents.map((event) => (
-            <div key={event.id} className="flex justify-center">
-              <EventCard event={event} className="w-full max-w-[280px]" />
+          {allSessoes.map((sessao) => (
+            <div key={sessao.id} className="flex justify-center">
+              <SessaoCard sessao={sessao} className="w-full max-w-[280px]" />
             </div>
           ))}
         </div>

@@ -2,7 +2,7 @@ from rest_framework import viewsets
 from .models import Teatro, Espetaculo, Sessao
 from .serializers import TeatroSerializer, EspetaculoSerializer, SessaoSerializer
 from drf_spectacular.utils import extend_schema
-from rest_framework_simplejwt.views import TokenObtainPairView
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.conf import settings
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -82,5 +82,40 @@ class LogoutView(APIView):
 
         response.delete_cookie(settings.SIMPLE_JWT["AUTH_COOKIE"])
         response.delete_cookie("refresh_token")
+
+        return response
+    
+class CookieTokenRefreshView(TokenRefreshView):
+    """
+    Lê o refresh token do cookie e retorna novo access no cookie.
+    """
+
+    def post(self, request):
+        refresh = request.COOKIES.get("refresh_token")
+
+        if not refresh:
+            return Response({"detail": "Refresh token não encontrado"}, status=400)
+
+        # Monta payload manualmente
+        serializer = self.get_serializer(data={"refresh": refresh})
+
+        try:
+            serializer.is_valid(raise_exception=True)
+        except Exception as e:
+            return Response({"detail": "Refresh inválido ou expirado"}, status=401)
+
+        access_token = serializer.validated_data["access"]
+
+        response = Response({"detail": "Token atualizado com sucesso"})
+
+        # Seta novo access token no cookie
+        response.set_cookie(
+            settings.SIMPLE_JWT["AUTH_COOKIE"],
+            access_token,
+            httponly=True,
+            secure=settings.SIMPLE_JWT["AUTH_COOKIE_SECURE"],
+            samesite=settings.SIMPLE_JWT["AUTH_COOKIE_SAMESITE"],
+            path=settings.SIMPLE_JWT["AUTH_COOKIE_PATH"],
+        )
 
         return response

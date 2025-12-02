@@ -6,7 +6,7 @@ class CookieJWTAuthentication(JWTAuthentication):
     """
     Lê o JWT do cookie, não do header Authorization.
     """
-
+    
     def authenticate(self, request):
         token = request.COOKIES.get(settings.SIMPLE_JWT["AUTH_COOKIE"])
         if not token:

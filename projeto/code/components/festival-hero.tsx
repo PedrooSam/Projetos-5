@@ -19,7 +19,7 @@ export function FestivalHero() {
             BRASIL
           </h1>
           
-          <div className="bg-card text-card-foreground rounded-lg p-6 md:p-8 max-w-2xl shadow-xl">
+          <div className="bg-foreground text-card rounded-lg p-6 md:p-8 max-w-2xl shadow-xl">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-balance">
               o vazio é cheio de coisa
             </h2>

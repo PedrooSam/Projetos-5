@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+
 
 # Create your models here.
 
@@ -41,3 +43,4 @@ class Sessao(models.Model):
     teatro = models.ForeignKey(Teatro, on_delete=models.PROTECT, related_name="sessoes")
     espetaculo = models.ForeignKey(Espetaculo, on_delete=models.PROTECT, related_name="sessoes")
     preco = models.DecimalField(decimal_places=2, max_digits=6)
+    data = models.DateField(default=timezone.now)
