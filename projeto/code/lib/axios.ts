@@ -1,15 +1,15 @@
-import axios, {AxiosHeaders } from "axios"
+import axios, { AxiosHeaders } from "axios";
 
-const url = process.env.NEXT_PUBLIC_API_LINK || 'http://localhost:8000' 
+const url = process.env.NEXT_PUBLIC_API_LINK || "http://localhost:8000";
 
 export interface HttpResponse<T> {
-  data: T
-  status: number;
+	data: T;
+	status: number;
 }
 
 export interface Pager<T> {
-  count: number,
-  results: T[]
+	count: number;
+	results: T[];
 }
 
 export const auth = axios.create({
@@ -17,7 +17,7 @@ export const auth = axios.create({
 	headers: new AxiosHeaders({
 		"Content-Type": "application/json",
 	}),
-	withCredentials: true
+	withCredentials: true,
 });
 
 export const api = axios.create({
@@ -35,56 +35,53 @@ let isRefreshing = false;
 let failedQueue: any[] = [];
 
 const processQueue = (error: any, token: string | null = null) => {
-  failedQueue.forEach(prom => {
-    if (error) {
-      prom.reject(error);
-    } else {
-      prom.resolve(token);
-    }
-  });
+	failedQueue.forEach((prom) => {
+		if (error) {
+			prom.reject(error);
+		} else {
+			prom.resolve(token);
+		}
+	});
 
-  failedQueue = [];
+	failedQueue = [];
 };
 
 api.interceptors.response.use(
-  (response) => response,
+	(response) => response,
 
-  async (error) => {
-    const originalRequest = error.config;
+	async (error) => {
+		const originalRequest = error.config;
 
-    // Só tenta refresh quando for 401 e não for retry ainda
-    if (error.response?.status === 401 && !originalRequest._retry) {
-      originalRequest._retry = true;
+		// Só tenta refresh quando for 401 e não for retry ainda
+		if (error.response?.status === 401 && !originalRequest._retry) {
+			originalRequest._retry = true;
 
-      if (isRefreshing) {
-        return new Promise((resolve, reject) => {
-          failedQueue.push({ resolve, reject });
-        })
-          .then(() => api(originalRequest))
-          .catch((err) => Promise.reject(err));
-      }
+			if (isRefreshing) {
+				return new Promise((resolve, reject) => {
+					failedQueue.push({ resolve, reject });
+				})
+					.then(() => api(originalRequest))
+					.catch((err) => Promise.reject(err));
+			}
 
-      isRefreshing = true;
+			isRefreshing = true;
 
-      try {
-        await auth.post("/jwt/refresh/");
+			try {
+				await auth.post("/jwt/refresh/");
 
-        processQueue(null);
-        window.location.reload()
-        return api(originalRequest);
+				processQueue(null);
+				window.location.reload();
+				return api(originalRequest);
+			} catch (refreshError) {
+				processQueue(refreshError, null);
+				return Promise.reject(refreshError);
+			} finally {
+				isRefreshing = false;
+			}
+		}
 
-      } catch (refreshError) {
-        processQueue(refreshError, null);
-        return Promise.reject(refreshError);
-
-      } finally {
-        isRefreshing = false;
-      }
-    }
-
-    return Promise.reject(error);
-  }
+		return Promise.reject(error);
+	},
 );
-
 
 export default api;
