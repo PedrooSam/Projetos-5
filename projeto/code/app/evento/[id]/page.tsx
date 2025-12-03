@@ -26,8 +26,6 @@ export default function EventoPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <FestivalHeader />
-
       <main className="container mx-auto px-4 py-8">
         {/* Back Button */}
         <Link href="/">
@@ -94,7 +92,6 @@ export default function EventoPage() {
         </>}
       </main>
 
-      <FestivalFooter />
     </div>
   )
 }

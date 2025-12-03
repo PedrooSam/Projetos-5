@@ -74,7 +74,7 @@ export default function ProgramacaoPage() {
 
 	return (
 		<div className="min-h-screen flex flex-col bg-background">
-			<FestivalHeader />
+			
 			<main className="flex-1 container mx-auto px-4 py-8">
 				{/* Back Button */}
 				<div className="mb-8">
@@ -109,7 +109,6 @@ export default function ProgramacaoPage() {
 				</div>
 			</main>
 
-			<FestivalFooter />
 		</div>
 	);
 }

@@ -74,11 +74,13 @@ api.interceptors.response.use(
 				return api(originalRequest);
 			} catch (refreshError) {
 				processQueue(refreshError, null);
+				window.location.replace("/login")
 				return Promise.reject(refreshError);
 			} finally {
 				isRefreshing = false;
 			}
 		}
+
 
 		return Promise.reject(error);
 	},

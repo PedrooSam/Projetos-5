@@ -42,7 +42,6 @@ export default function FestivalPage() {
 
 	return (
 		<div className="min-h-screen">
-			<FestivalHeader />
 			<SessaoCarousel />
 
 			<main className="container mx-auto px-4 py-12 space-y-16">

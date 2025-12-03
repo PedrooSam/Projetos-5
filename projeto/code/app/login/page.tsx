@@ -31,6 +31,7 @@ export default function LoginPage() {
 		setServerError("");
 		try {
 			await authService.login(data.username, data.password);
+			window.location.replace("/")
 		} catch (err) {
 			setServerError("Erro ao fazer login. Tente novamente.");
 		}
